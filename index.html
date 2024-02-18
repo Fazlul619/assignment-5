@@ -11,6 +11,13 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Additional custom styles */
+      .seat {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -220,7 +227,141 @@
           </div>
         </div>
       </section>
-      <!-- set -->
+      <!-- seat  section-->
+      <section>
+        <div class="flex gap-5 justify-center p-4">
+          <div class="card card-side bg-[#e37070] shadow-xl">
+            <!-- seat number -->
+            <div class="p-8">
+              <h1 class="text-black font-semibold">Select Your Seat</h1>
+              <br />
+              <div class="flex gap-12">
+                <div class="flex">
+                  <img src="images/seat-gray.png" alt="" />
+                  Available
+                </div>
+                <div class="flex pl-28">
+                  <img src="images/seat-green.png" alt="" />
+                  <span>0</span>
+                  Selected
+                </div>
+              </div>
+              <br />
+
+              <div class="p-8">
+                <div class="max-w-md mx-auto bg-white rounded-lg p-6 shadow-md">
+                  <div class="grid grid-cols-4 gap-4">
+                    <!-- Seats -->
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      A1
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      A2
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      A3
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      A4
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      B1
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      B2
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      B3
+                    </button>
+                    <button
+                      class="flex justify-center items-center bg-gray-200 rounded-md seat"
+                    >
+                      B4
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- taka count -->
+            <div class="p-8">
+              <h1 class="text-black font-semibold">Select Your Seat</h1>
+              <br />
+
+              <div class="overflow-x-auto bg-white rounded-xl mt-4">
+                <table class="table">
+                  <!-- head -->
+                  <tbody>
+                    <tr>
+                      <th>Sit</th>
+                      <th>Class</th>
+                      <th>Price</th>
+                    </tr>
+
+                    <!-- row 1 -->
+
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- row 2 -->
+
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- row 3 -->
+
+                    <tr>
+                      <th>Total Price</th>
+                      <td></td>
+                      <th>BDT <span>0</span></th>
+                    </tr>
+                  </tbody>
+                </table>
+                <label class="input input-bordered flex items-center gap-2">
+                  <input
+                    type="text"
+                    class="grow"
+                    placeholder="Have any coupon"
+                  />
+                  <button
+                    class="btn btn-primary bg-[#1DD100] border-none text-black font-bold"
+                  >
+                    Apply
+                  </button>
+                </label>
+                <div class="flex justify-between p-6 font-bold">
+                  <h1>Grand Total</h1>
+                  <h1>BDT <span>0</span></h1>
+                </div>
+                <div>
+                  <button
+                    class="btn btn-wide bg-[#1DD100] border-none text-white font-bold w-full"
+                  >
+                    <span>Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
