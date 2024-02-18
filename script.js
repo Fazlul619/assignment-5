@@ -49,3 +49,7 @@ function updateSelectedSeatsTable() {
     selectedSeatsTable.classList.add("hidden");
   }
 }
+function display() {
+  const displaySection = document.getElementById("display-screen");
+  displaySection.classList.remove("hidden");
+}
