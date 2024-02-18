@@ -17,6 +17,9 @@
         width: 50px;
         height: 50px;
       }
+      .selected {
+        background-color: #1dd100 !important;
+      }
     </style>
   </head>
   <body>
@@ -183,7 +186,7 @@
                   </div>
 
                   <p class="text-[#1DD100] font-medium text-base">
-                    <span>40</span> Seats left
+                    <span id="remainingSeats">8</span> Seats left
                   </p>
                 </div>
               </div>
@@ -253,41 +256,49 @@
                   <div class="grid grid-cols-4 gap-4">
                     <!-- Seats -->
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       A1
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       A2
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       A3
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       A4
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       B1
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       B2
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       B3
                     </button>
                     <button
+                      onclick="toggleSeatColor(this)"
                       class="flex justify-center items-center bg-gray-200 rounded-md seat"
                     >
                       B4
@@ -306,34 +317,38 @@
                   <!-- head -->
                   <tbody>
                     <tr>
-                      <th>Sit</th>
+                      <th>
+                        Seat
+                        <span
+                          id="selectedSeatCount"
+                          class="bg-[#1DD100] text-white rounded-lg"
+                          >0</span
+                        >
+                      </th>
                       <th>Class</th>
                       <th>Price</th>
                     </tr>
-
-                    <!-- row 1 -->
-
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <!-- row 2 -->
-
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <!-- row 3 -->
-
-                    <tr>
-                      <th>Total Price</th>
-                      <td></td>
-                      <th>BDT <span>0</span></th>
-                    </tr>
                   </tbody>
                 </table>
+                <!-- Table Data Append start -->
+                <div id="selectedSeatsTable" class="mt-4 hidden">
+                  <table class="table-auto">
+                    <thead>
+                      <tr>
+                        <th class="px-4 py-2"></th>
+                        <th class="px-4 py-2"></th>
+                        <th class="px-4 py-2"></th>
+                      </tr>
+                    </thead>
+                    <tbody id="selectedSeatsBody"></tbody>
+                  </table>
+                </div>
+                <!-- Table Data Append end -->
+                <div class="flex justify-between p-6 font-bold">
+                  <h1>Total Price</h1>
+                  <h1>BDT <span id="totalPriceCount">0</span></h1>
+                </div>
+
                 <label class="input input-bordered flex items-center gap-2">
                   <input
                     type="text"
@@ -348,7 +363,7 @@
                 </label>
                 <div class="flex justify-between p-6 font-bold">
                   <h1>Grand Total</h1>
-                  <h1>BDT <span>0</span></h1>
+                  <h1>BDT <span id="totalPriceCount1">0</span></h1>
                 </div>
                 <div>
                   <button
@@ -364,5 +379,6 @@
       </section>
     </main>
     <footer></footer>
+    <script src="script.js"></script>
   </body>
 </html>
