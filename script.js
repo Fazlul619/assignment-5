@@ -2,6 +2,10 @@ let totalSeats = 8;
 let remainingSeats = totalSeats;
 let selectedSeatCount = 0;
 let selectedSeats = [];
+window.addEventListener("load", function () {
+  document.getElementById("next-btn").disabled = true;
+});
+
 function toggleSeatColor(button) {
   if (!button.classList.contains("selected")) {
     remainingSeats--;
@@ -13,6 +17,7 @@ function toggleSeatColor(button) {
 
     selectedSeatCount--;
   }
+
   document.getElementById("remainingSeats").textContent = `${remainingSeats}`;
   document.getElementById(
     "selectedSeatCount"
@@ -36,6 +41,11 @@ function updateSelectedSeatsTable() {
     const priceCell = document.createElement("td");
     priceCell.textContent = "550";
     row.appendChild(priceCell);
+    row.style.display = "flex";
+    row.style.gap = "55px";
+    row.style.width = "100%";
+    row.style.marginLeft = "20px";
+
     selectedSeatsBody.appendChild(row);
     totalPrice += 550;
   });
@@ -45,11 +55,18 @@ function updateSelectedSeatsTable() {
   const selectedSeatsTable = document.getElementById("selectedSeatsTable");
   if (selectedSeats.length > 0) {
     selectedSeatsTable.classList.remove("hidden");
+    document.getElementById("next-btn").removeAttribute("disabled");
   } else {
     selectedSeatsTable.classList.add("hidden");
+    document.getElementById("next-btn").disabled = true;
   }
 }
+
+const displaySection = document.getElementById("display-screen");
+
 function display() {
-  const displaySection = document.getElementById("display-screen");
   displaySection.classList.remove("hidden");
+}
+function Show() {
+  displaySection.classList.add("hidden");
 }
